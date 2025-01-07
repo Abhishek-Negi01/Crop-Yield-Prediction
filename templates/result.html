@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crop Yield Prediction - Result</title>
+    <link rel="stylesheet" href="\static\style.css">
+</head>
+
+<body>
+    <h1>Crop Yield Prediction - Result</h1>
+    <main>
+        <div id="container">
+            <h2>Predicted Crop Yield: {{ prediction }}</h2>
+            <form action="/new_prediction">
+                <button type="submit">New Prediction</button>
+            </form>
+        </div>
+    </main>
+</body>
+
+</html>

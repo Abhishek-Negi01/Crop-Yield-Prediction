@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>crop-yield-prediction</title>
+    <link rel="stylesheet" href="\static\style.css">
+    <!-- <script src="script.js"></script> -->
+</head>
+<!-- Crop: The name of the crop cultivated.
+Crop_Year: The year in which the crop was grown.
+Season: The specific cropping season (e.g., Kharif, Rabi, Whole Year).
+State: The Indian state where the crop was cultivated.
+Area: The total land area (in hectares) under cultivation for the specific crop.
+Production: The quantity of crop production (in metric tons).
+Annual_Rainfall: The annual rainfall received in the crop-growing region (in mm).
+Fertilizer: The total amount of fertilizer used for the crop (in kilograms).
+Pesticide: The total amount of pesticide used for the crop (in kilograms).
+Yield: The calculated crop yield (production per unit area). -->
+
+<body>
+    <h1>Crop Yield Prediction</h1>
+    <main>
+        <div id="container">
+            <form method="POST" action="/predict" id="prediction-form">
+                <div id="year-box">
+                    <label for="year">Enter Crop Year</label>
+                    <br>
+                    <input type="number" id="year" name="year" min="1997" placeholder="YYYY" required>
+                </div>
+                <br>
+                <div id="season-box">
+                    <label for="season">Select Season of the Crop</label>
+                    <br>
+                    <select name="season" id="season">
+                        <option value="">select season</option>
+                        <option value="Whole Year">Whole Year</option>
+                        <option value="Kharif">Kharif</option>
+                        <option value="Rabi">Rabi</option>
+                        <option value="Autumn">Autumn</option>
+                        <option value="Summer">Summer</option>
+                        <option value="Winter">Winter</option>
+                    </select>
+                </div>
+                <br>
+                <label for="state">Select Location (State or City)</label>
+                <br>
+                <select name="state" id="state">
+                    <option value="">select state or city</option>
+                    <option value="Assam">Assam</option>
+                    <option value="Karnataka">Karnataka</option>
+                    <option value="Kerala">Kerala</option>
+                    <option value="Meghalaya">Meghalaya</option>
+                    <option value="West Bengal">West Bengal</option>
+                    <option value="Puducherry">Puducherry</option>
+                    <option value="Goa">Goa</option>
+                    <option value="Andhra Pradesh">Andhra Pradesh</option>
+                    <option value="Tamil Nadu">Tamil Nadu</option>
+                    <option value="Odisha">Odisha</option>
+                    <option value="Bihar">Bihar</option>
+                    <option value="Gujarat">Gujarat</option>
+                    <option value="Madhya Pradesh">Madhya Pradesh</option>
+                    <option value="Maharashtra">Maharashtra</option>
+                    <option value="Mizoram">Mizoram</option>
+                    <option value="Punjab">Punjab</option>
+                    <option value="Uttar Pradesh">Uttar Pradesh</option>
+                    <option value="Haryana">Haryana</option>
+                    <option value="Himachal Pradesh">Himachal Pradesh</option>
+                    <option value="Tripura">Tripura</option>
+                    <option value="Nagaland">Nagaland</option>
+                    <option value="Chhattisgarh">Chhattisgarh</option>
+                    <option value="Uttarakhand">Uttarakhand</option>
+                    <option value="Jharkhand">Jharkhand</option>
+                    <option value="Delhi">Delhi</option>
+                    <option value="Manipur">Manipur</option>
+                    <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+                    <option value="Telangana">Telangana</option>
+                    <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                    <option value="Sikkim">Sikkim</option>
+                </select>
+                <br>
+                <label for="Area"> Area of the Field</label>
+                <br>
+                <input type="number" id="Area" name="Area" placeholder="enter area of the field" required>
+                <br>
+                <label for="Production">Quantity of Crop Production</label>
+                <br>
+                <input type="number" id="production" name="production"
+                    placeholder="enter quantity of crop production (in metric tons)" required>
+                <br>
+                <label for="Annual_Rainfall">Annual Rainfall received in the Crop-growing region (in mm)</label>
+                <br>
+                <input type="number" id="Annual_Rainfall" name="Annual_Rainfall"
+                    placeholder="enter annual rainfall received in the crop-growing region (in mm)">
+                <br>
+                <label for="Fertilizer">Total Amount of Fertilizer used for the Crop (in kilograms)</label>
+                <br>
+                <input type="number" id="Fertilizer" name="Fertilizer"
+                    placeholder="enter total amount of fertilizer used for the crop (in kilograms)">
+                <br>
+                <label for="Pesticides">Total Amount of Pesticide used for the Crop (in kilograms)</label>
+                <br>
+                <input type="number" id="Pesticide" name="Pesticide"
+                    placeholder="enter total amount of pesticide used for the crop (in kilograms)">
+                <br>
+                <form method="POST" action="/predict" id="prediction-form">
+                    <!-- All form fields here -->
+                    <button type="submit">Predict</button>
+                </form>
+
+        </div>
+    </main>
+    <script>
+        // Reset the form when the New Prediction button is clicked
+        function resetForm() {
+            // Reset the form fields
+            document.getElementById('prediction-form').reset();
+
+            // Remove any displayed prediction result
+            const predictionResult = document.querySelector('h2');
+            if (predictionResult) {
+                predictionResult.style.display = 'none';
+            }
+        }
+    </script>
+
+</body>
+
+</html>
