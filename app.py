@@ -20,6 +20,7 @@ def index():
 @app.route('/predict', methods=['POST'])
 def predict():
     # Get input values from the HTML form
+    crop = request.form['crop']
     crop_year = int(request.form['year'])
     area = float(request.form['Area'])
     production = float(request.form['production'])
@@ -31,6 +32,7 @@ def predict():
 
     # Create a DataFrame for the input data
     input_data = pd.DataFrame({
+        'Crop' : [crop],
         'Crop_Year': [crop_year],
         'Area': [area],
         'Production': [production],

@@ -97,7 +97,7 @@ main {
   }
   
   /* General Input Fields */
-  input[type="number"],
+  input[type="dec"],
   select {
     width: 100%;
     padding: 10px;
@@ -107,7 +107,7 @@ main {
     box-sizing: border-box;
   }
   
-  input[type="number"]:focus,
+  input[type="dec"]:focus,
   select:focus {
     border-color: #007bff;
     outline: none;
