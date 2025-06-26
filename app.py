@@ -5,7 +5,7 @@ from flask import Flask, render_template, request
 app = Flask(__name__)
 
 # Load the trained model
-with open(r'model\model.pkl', 'rb') as model_file:
+with open(r'model/model.pkl', 'rb') as model_file:
     model = pickle.load(model_file)
 
 # Define the feature columns that your model was trained on
